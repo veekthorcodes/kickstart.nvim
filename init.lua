@@ -27,22 +27,12 @@ vim.opt.rtp:prepend(lazypath)
 
 -- [[ Lazy Setup ]]
 require('lazy').setup({
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function()
-      require('rose-pine').setup {
-        disable_background = true,
-        disable_float_background = false,
-      }
-      vim.cmd 'colorscheme rose-pine'
-    end,
-  },
+  -- 'nvim-lualine/lualine.nvim',
   'tpope/vim-sleuth',
+  'github/copilot.vim',
   'tpope/vim-fugitive',
   require 'kickstart.plugins.debug',
   require 'kickstart.plugins.gitsigns',
-
   { import = 'custom.plugins' },
 }, {
   ui = {
