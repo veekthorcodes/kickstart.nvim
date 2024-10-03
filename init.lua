@@ -1,19 +1,3 @@
-require 'custom.keymaps'
-require 'custom.options'
-
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'netrw',
-  command = 'setlocal nonumber norelativenumber',
-})
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -25,31 +9,22 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Lazy Setup ]]
+require 'custom.keymaps'
+require 'custom.options'
+require 'custom.config.autocmds'
 require('lazy').setup({
-  -- 'nvim-lualine/lualine.nvim',
+  { import = 'custom.plugins' },
   'tpope/vim-sleuth',
   'github/copilot.vim',
   'tpope/vim-fugitive',
-  require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.gitsigns',
-  { import = 'custom.plugins' },
+  --  require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.gitsigns',
 }, {
-  ui = {
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
+  change_detection = {
+    notify = false,
+  },
+  checker = {
+    enabled = true,
+    notify = false,
   },
 })
