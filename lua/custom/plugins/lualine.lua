@@ -7,6 +7,8 @@ return {
         theme = 'rose-pine',
         section_separators = { '', '' },
         component_separators = { '', '' },
+        icons_enabled = true,
+        always_divide_middle = true,
       },
       sections = {
         lualine_a = { 'mode' },

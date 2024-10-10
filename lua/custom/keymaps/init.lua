@@ -1,3 +1,5 @@
+require 'custom.keymaps.java'
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
@@ -27,10 +29,13 @@ vim.keymap.set('v', '>', '>gv', { desc = 'Shift right' })
 
 vim.keymap.set('n', '<leader>l', ':Lazy <CR>', { desc = 'Lazy' })
 
-vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+vim.keymap.set('i', '<C-y>', 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false,
 })
 vim.g.copilot_no_tab_map = true
 
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+vim.keymap.set('n', '<leader>rg', ':lua run_gradle()<CR>', { desc = 'Run maven' })
+vim.keymap.set('n', '<leader>rj', ':lua run_java()<CR>', { desc = 'Run java' })

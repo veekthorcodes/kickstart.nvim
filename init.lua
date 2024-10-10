@@ -17,7 +17,7 @@ require('lazy').setup({
   'tpope/vim-sleuth',
   'github/copilot.vim',
   'tpope/vim-fugitive',
-  --  require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.gitsigns',
 }, {
   change_detection = {
