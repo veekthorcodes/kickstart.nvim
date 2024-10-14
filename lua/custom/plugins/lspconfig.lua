@@ -20,6 +20,7 @@ return {
         'yamlls',
         'bashls',
         'jdtls',
+        'tflint',
       },
     }
 
@@ -69,7 +70,7 @@ return {
       },
     }
 
-    local servers = { 'ts_ls', 'pyright', 'html', 'cssls', 'jsonls', 'yamlls', 'bashls' }
+    local servers = { 'ts_ls', 'pyright', 'html', 'cssls', 'jsonls', 'yamlls', 'bashls', 'terraformls' }
     for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
         on_attach = on_attach,

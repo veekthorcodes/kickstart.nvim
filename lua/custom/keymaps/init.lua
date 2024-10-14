@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
--- vim.keymap.set('n', '<leader>e', ':Ex <CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>p', ':Ex <CR>', { noremap = true, silent = true })
 vim.keymap.set({ 'i', 'v' }, 'kj', '<Esc>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 

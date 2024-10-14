@@ -3,7 +3,7 @@ return {
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   opts = {
-    ensure_installed = { 'lua', 'luadoc', 'vim', 'vimdoc' },
+    ensure_installed = { 'lua', 'luadoc', 'vim', 'vimdoc', 'terraform', 'hcl' },
     auto_install = true,
     highlight = {
       enable = true,
